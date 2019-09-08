@@ -1,6 +1,9 @@
 .section-quicklink {
   background-color: #fff;
   overflow: hidden;
+  .carousel {
+    margin-bottom: 15px;
+  }
   .carousel-item {
     display: flex;
     padding: 0 15px;

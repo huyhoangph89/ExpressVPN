@@ -1,0 +1,48 @@
+.section-topic {
+  .heading-2 {
+    margin: 0;
+  }
+  .topic-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    .desc {
+      position: absolute;
+      padding: 15px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      background-color: rgba(51,51,51,.6);
+      transition: all 300ms linear;
+      color: $white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p:last-child {
+        margin: 0;
+      }
+    }
+    
+  }
+  @include tablet-up {
+    .item {
+      width: 50%;
+      .desc {
+        top: 0;
+        transform: scaleY(0);
+      }
+      &:hover {
+        .desc {
+          transform: scaleY(1);
+        }
+      }
+    }
+  }
+}
