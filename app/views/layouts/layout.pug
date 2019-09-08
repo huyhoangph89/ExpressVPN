@@ -1,0 +1,46 @@
+include ../mixins/common.pug
+
+block vars
+  - title = 'Site';
+
+doctype html
+html.no-js(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title= title
+    meta(name='description', content=description ? description : '')
+    meta(name='keywords', content=keyword ? keyword : '')
+    meta(name='robots', content='index, follow')
+    meta(name='author', content='')
+    meta(name='theme-color', content='#ffffff')
+    // build:css ./assets/styles/main.min.css
+    link(rel='stylesheet', href='./assets/styles/main.scss')
+    // endbuild
+
+    //-[if lte IE 9]> <script src='https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js'></script><script src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js'></script> <![endif]
+  body
+    //-[if lte IE 9]><p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p><![endif]
+    noscript JavaScript is off. Please enable to view full site.
+    include ../global/header.pug
+    block container
+    include ../global/footer.pug
+    include ../global/scripts.pug
+
+    // build:remove
+    script.
+      var port = location.port;
+      var s = document.createElement('script'), h = document.getElementsByTagName('head')[0];
+          s.src = 'http://localhost:'+ port +'/socket.io/socket.io.js';
+          s.async = true;
+          h.appendChild(s);
+      s.onload = function() {
+        var socket = io.connect('localhost:'+port+'/');
+        socket.on('messages', function (data) {
+          if(data) {
+            location.reload(true);
+          }
+        });
+      }
+    // endbuild

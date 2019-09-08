@@ -1,0 +1,29 @@
+{
+  "curly": false,
+  "eqeqeq": true,
+  "latedef": true,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "unused": true,
+  "boss": true,
+  "eqnull": true,
+  "evil": true,
+  "loopfunc": true,
+  "browser": true,
+  "devel": true,
+  "expr": true,
+  "esversion": 6,
+  "quotmark": "single",
+  "globals": {
+    "Modernizr": true,
+    "jQuery": true,
+    "Site": true,
+    "Handlebars": true,
+    "_": true,
+    "Detectizr": true,
+    "tinycolor": true,
+    "Popper": true
+  }
+}

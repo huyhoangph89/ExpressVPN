@@ -1,0 +1,35 @@
+.heading-2 {
+  color: $white;
+  background-color: $primary-color;
+  padding: 10px 15px;
+  line-height: 1;
+  font-size: rem(16px);
+  font-weight: 600;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  color: $white;
+  background-color: #fa5245;
+  margin: 10px 0 0;
+  &-label {
+    width: 60px;
+    padding: 10px;
+    background-color: #b0221e;
+    margin: 0;
+  }
+  &-text {
+    width: calc(100% - 60px);
+    padding: 10px;
+  }
+}
+
+@include desktop-up {
+  .info {
+    background-color:#6a8f3f;
+    &-label {
+      background-color: #034d40;
+    }
+  }
+}

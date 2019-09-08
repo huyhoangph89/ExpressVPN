@@ -1,0 +1,33 @@
+.section-quicklink {
+  background-color: #fff;
+  overflow: hidden;
+  .carousel-item {
+    display: flex;
+    padding: 0 15px;
+    .item {
+      width: 25%;
+      font-size: 14px;
+      text-align: center;
+      padding: 0 5px;
+      img {
+        margin: 0 auto;
+        max-width: 60px;
+        width: 100%;
+      }
+      span {
+        padding: 5px 0 0;
+        white-space: nowrap;
+        overflow: hidden;
+        display: block;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  .slick-dots {
+    display: none !important;
+  }
+  .slick-arrow:before {
+    color: $black;
+    font-size: rem(16px);
+  }
+}

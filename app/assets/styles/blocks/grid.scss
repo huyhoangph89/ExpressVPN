@@ -1,0 +1,34 @@
+.section-grid {
+  display: flex;
+  flex-wrap: wrap;
+  border: 2px solid $white;
+  .item {
+    width: 50%;
+    text-align: center;
+    color: $white;
+    padding: 25px 20px 20px;
+    border: 2px solid $white;
+    @include desktop-up {
+      width: 25%;
+    }
+    &.pink {
+      background-color: #ea587d;
+    }
+    &.orange {
+      background-color: #ff7044;
+    }
+    &.carot {
+      background-color: #f35f5d;
+    }
+    &.green {
+      background-color: #66bb6a
+    }
+    .ion {
+      font-size: rem(36px);
+    }
+    p {
+      font-size: rem(14px);
+      margin: 15px 0 0;
+    }
+  }
+}

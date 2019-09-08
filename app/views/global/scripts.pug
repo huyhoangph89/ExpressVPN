@@ -1,0 +1,8 @@
+<!-- main:js -->
+if jsPath
+  each item in jsPath
+    script(defer type='text/javascript', src=`.${item}`)
+<!-- endinject -->
+
+if(scriptpage !== undefined && scriptpage !== '' && scriptpage!==null)
+  script(src='./scripts/dev/pages/'+scriptpage+'.js', defer)

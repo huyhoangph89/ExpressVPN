@@ -1,0 +1,14 @@
+{
+  "presets": [
+    [ "@babel/preset-env", {
+      "targets": {
+        "browsers": [ "last 2 version", "ie >= 10", "safari >= 7"]
+      }
+    }]
+  ],
+  "ignore": [
+    "node_modules",
+    "app/scripts/*.js",
+    "app/scripts/jquery_plugins/*.js",
+  ]
+}
