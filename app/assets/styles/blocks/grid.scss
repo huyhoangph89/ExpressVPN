@@ -6,17 +6,18 @@
     width: 50%;
     text-align: center;
     color: $white;
-    padding: 25px 20px 20px;
+    padding: 15px 10px 10px;
     border: 2px solid $white;
     @include desktop-up {
+      padding: 25px 10px 20px;
       width: 25%;
     }
     .ion {
-      font-size: rem(36px);
+      font-size: rem(40px);
     }
     p {
       font-size: rem(14px);
-      margin: 15px 0 0;
+      margin: 8px 0 0;
     }
   }
 }

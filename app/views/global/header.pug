@@ -1,0 +1,22 @@
+header#header
+  .header
+    .header--toolbox
+      i.ion.ion-md-apps
+      span SharePoint
+    .header--search
+      input(type='text', value='', placeholder='Tìm kiếm')
+      +link('search','javascript:void(0)')
+        i.ion.ion-md-search
+    ul.header--account
+      li.menu-dropdown
+        +link('Notifications','#', 'Notifications')
+          i.ion.ion-md-notifications-outline
+      li.menu-dropdown
+        +link('Settings','#', 'Settings')
+          i.ion.ion-md-settings
+      li.menu-dropdown
+        +link('Helper','#', 'Helper')
+          i.ion.ion-md-information-circle
+      li
+        span.personal AA  
+  include menu.pug

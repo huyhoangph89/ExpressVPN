@@ -1,12 +1,15 @@
 .list {
   list-style: none;
   margin: 0;
-  padding: 0 10px;
+  padding: 0;
   li {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
-    padding: 5px;
+    margin-top: 5px;
+    &:first-child {
+      margin-top: 0;
+    }
+    padding: 4px 5px;
     background-color: #f9f9f9;
     img {
       max-width: 40px
@@ -24,9 +27,12 @@
   &-news {
     list-style: none;
     margin: 0;
-    padding: 0 10px;
+    padding: 0;
     li {
-      padding-bottom: 5px;
+      margin-top: 5px;
+      &:first-child {
+        margin-top: 0;
+      }
       display: flex;
       align-items: center;
       .desc {
@@ -42,21 +48,74 @@
       }
       .thumb {
         background-color: #e3effb;
-        padding: 5px;
+        padding: 4px;
         position: relative;
         .inner {
-          width: 50px;
-          height: 50px;
-          border-radius: 10px;
+          width: 40px;
+          height: 40px;
+          border-radius: 8px;
           background-color: #257a9f;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
+          font-size: rem(14px);
           span {
             color: $white;
             display: block
           }
+        }
+      }
+    }
+  }
+  &-numberic {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      padding: 8px;
+      border-top: 1px solid $body-color;
+      &:hover {
+        background-color: $body-color;
+      }
+      &:first-child {
+        border-color: transparent;
+      }
+      &.approved {
+        .ion {
+          color: $success-color;
+        }
+      }
+      &.spending {
+        .ion {
+          color: $warning-color;
+        }
+      }
+      &.closed {
+        .ion {
+          color: $error-color;
+        }
+      }
+    }
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: $text-color;
+      text-decoration: none;
+      span {
+        &.number {
+          width: 20px;
+          text-align: center;
+        }
+        &.label {
+          width: calc(100% - 70px);
+          padding: 0 5px;
+        }
+        &.ion {
+          width: 40px;
+          font-size: rem(24px);
+          text-align: right;
         }
       }
     }

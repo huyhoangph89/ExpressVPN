@@ -1,10 +1,11 @@
 .section {
-  .task {
-    border-radius: 5px;
-    box-shadow: 1px 2px #e8eaec;
-    background-color: $white;
+  .task { 
     text-align: center;
     padding: rem(30px);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
     .ion {
       color: $success-color;
       font-size: rem(44px);

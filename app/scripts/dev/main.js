@@ -1,6 +1,86 @@
 /* global WebFontConfig:true */
 //Global function here
+//Handlebar Helper function iff
+Handlebars.registerHelper('iff', function(a, operator, b, options) {
+  var result = false;
+  switch (operator) {
+    case '===':
+      result = a === b;
+      break;
+    case '!==':
+      result = a !== b;
+      break;
+    case '<':
+      result = a < b;
+      break;
+    case '>':
+      result = a > b;
+      break;
+    case '<=':
+      result = a <= b;
+      break;
+    case '>=':
+      result = a >= b;
+      break;
+    default: {
+      throw new Error('helper iff: invalid operator: `' + operator + '`');
+    }
+  }
+  return result ? options.fn(this) : options.inverse(this);
+});
+//Handlebar Helper for plus and add
+Handlebars.registerHelper('plus', function(a, b) {
+  return parseInt(a) + parseInt(b);
+});
 
+Handlebars.registerHelper('subtract', function(a, b) {
+  return parseInt(a) - parseInt(b);
+});
+//Handlebar Helper for formating number to have comas
+Handlebars.registerHelper('addComas', function(num) {
+  return num ? num.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, '$1,') : 0;
+});
+
+//Handlebar Helper for formating number to have digits, Ex: {{#toFixed 1.234 2} -> 1.23
+Handlebars.registerHelper('toFixed', function(num, digits) {
+  num = parseFloat(num);
+  digits = parseInt(digits);
+  return num.toFixed(digits);
+});
+
+Handlebars.registerHelper('moduloIf', function(
+  index_count,
+  mod,
+  remain,
+  block
+) {
+  if (parseInt(index_count) % mod === remain) {
+    return block.fn(this);
+  }
+});
+
+Handlebars.registerHelper('eachLimit', function(arr, max, options) {
+  if (!arr || arr.length === 0) return options.inverse(this);
+  var result = [];
+  for (var i = 0; i < max && i < arr.length; ++i)
+    result.push(options.fn(arr[i]));
+  return result.join('');
+});
+
+Handlebars.registerHelper('for', function(from, to, incr, block) {
+  var accum = '';
+  for (var i = from; i < to; i += incr) accum += block.fn(i);
+  return accum;
+});
+
+// add method replace all to string type
+String.prototype.replaceAll = function(e, t) {
+  var r = this;
+  return r.replace(
+    new RegExp(e.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'), 'g'),
+    t
+  );
+};
 // add method replace all to string type
 String.prototype.replaceAll = function(e, t) {
   var r = this;

@@ -1,0 +1,26 @@
+.section-banner {
+  .banner {
+    position: relative;
+  }
+  .thumb {
+    iframe {
+      width: 100%;
+      height: calc(100% * 1.75);
+    }
+  }
+  .desc {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 15px;
+    background-color: rgba(0,0,0,.6);
+    color: $white;
+    .name {
+      font-size: rem(20px);
+    }
+    .text {
+      line-height: 1.4;
+    }
+  }
+}

@@ -1,11 +1,14 @@
 html {
   font-size: 16px;
+  &.open-menu {
+    overflow: hidden;
+  }
 }
 
 html,
 body {
   font-family: $font-fontback;
-  color: #333;
+  color: $text-color;
   background-color: $body-color;
   line-height: 1.2;
   -webkit-tap-highlight-color: transparent;
@@ -17,6 +20,7 @@ body {
 }
 
 * {
+  transition: all 300ms linear;
   &:active,
   :focus {
     outline: none;
@@ -27,38 +31,15 @@ img {
   max-width: 100%;
 }
 
-.heading-2 {
-  color: $white;
-  background-color: $title-bg;
-  padding: 10px 15px;
-  line-height: 1;
-  font-size: rem(16px);
-  font-weight: 600;
+.ellipse {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.heading-4 {
-  font-size: rem(20px);
-  line-height: 1;
-  font-weight: 600;
-  margin: 10px 0 15px;
-}
-
-
-.pink {
-  background-color: #ea587d;
-}
-.orange {
-  background-color: #ff7044;
-}
-.carot {
-  background-color: #f35f5d;
-}
-.green {
-  background-color: #66bb6a
-}
-.success {
-  color: $success-color;
-}
-.error {
-  color: $error-color;
+.back-to-top {
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 5px;
+  border-bottom: 2px solid $primary-color;
 }

@@ -1,42 +1,44 @@
-nav.nav-main#menuWrapper
-  ul.nav-main__menu
-    li
-      a.nav-main__menu-link(href='javascript:void(0)',title='Menu level 1',class=menuIndex==1?'active':'') Menu level 1
-      span.ion.ion-ios-arrow-down
-      ul.nav-main__menu-second
+nav.main-nav
+  +link('Novaland','index.html').logo
+    +img('Logo','./assets/images/logo.png')
+  .menu
+    a.hamburger-menu(data-toggle-menu,data-toggle-target='#menuWrapper',href='javascript:void(0);',title='Menu')
+      span
+        span
+        span
+      span
+        span
+        span
+      span
+        span
+        span
+    ul.menu-top
+      li
+        +link('Tạo','#')
+          i.ion.ion-md-add
+          span Tạo Trang
+      li
+        +link('Edit','#')
+          i.ion.ion-md-create
+          span Chỉnh sửa
+      li
+        +link('share','#')
+          i.ion.ion-md-share
+          span Chia sẻ
+    .menu-bottom
+      ul#menuWrapper
         li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==1&&munuSubIndex==1)?'active':'') Menu level 2
+          +link('Home','index.html')
+            | Giới thiệu
         li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==1&&munuSubIndex==2)?'active':'') Menu level 2
+          +link('Tài liệu','#')
+            | Tài liệu
         li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==1&&munuSubIndex==3)?'active':'') Menu level 2
+          +link('Nhân sự','#')
+            | Nhân sự
         li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==1&&munuSubIndex==4)?'active':'') Menu level 2
-          span.ion.ion-ios-arrow-down
-          ul.nav-main__menu-third
-            li
-              a(href='#',title='Menu level 3') Menu level 3
-            li
-              a(href='#',title='Menu level 3') Menu level 3
-    li
-      a.nav-main__menu-link(href='http://google.com/',title='Menu level 1',class=menuIndex==2?'active':'') Menu level 1
-    li
-      a.nav-main__menu-link(href='#',title='Menu level 1',class=menuIndex==3?'active':'') Menu level 1
-    li
-      a.nav-main__menu-link(href='#',title='Menu level 1',class=menuIndex==4?'active':'') Menu level 1
-    li
-      a.nav-main__menu-link(href='javascript:void(0)',title='Menu level 1',class=menuIndex==5?'active':'') Menu level 1
-      span.ion.ion-ios-arrow-down
-      ul.nav-main__menu-second
+          +link('Ứng Dụng','#')
+            | Ứng dụng
         li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==5&&munuSubIndex==1)?'active':'') Menu level 2
-        li
-          a.nav-main__menu-second-link(href='#',title='Menu level 2',class=(menuIndex==5&&munuSubIndex==2)?'active':'') Menu level 2
-          span.ion.ion-ios-arrow-down
-          ul.nav-main__menu-third
-            li
-              a(href='#',title='Menu level 3') Menu level 3
-            li
-              a(href='#',title='Menu level 3') Menu level 3
-    li
-      a.nav-main__menu-link(href='#',title='Menu level 1',class=menuIndex==6?'active':'') Menu level 1
+          +link('Phòng ban','#')
+            | Phòng ban

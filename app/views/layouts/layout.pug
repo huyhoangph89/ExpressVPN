@@ -1,5 +1,4 @@
 include ../mixins/common.pug
-
 block vars
   - title = 'Site';
 
@@ -15,6 +14,7 @@ html.no-js(lang='en')
     meta(name='robots', content='index, follow')
     meta(name='author', content='')
     meta(name='theme-color', content='#ffffff')
+    link(rel='shortcut icon', type='image/png', href='./assets/images/favicon.ico')
     // build:css ./assets/styles/main.min.css
     link(rel='stylesheet', href='./assets/styles/main.scss')
     // endbuild
@@ -25,7 +25,6 @@ html.no-js(lang='en')
     noscript JavaScript is off. Please enable to view full site.
     include ../global/header.pug
     block container
-    include ../global/footer.pug
     include ../global/scripts.pug
 
     // build:remove

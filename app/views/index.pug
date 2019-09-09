@@ -8,14 +8,20 @@ block container
   .container-fluid
     .row
       .col-xs-12.col-md-8
-        include ./blocks/carousel.pug
-        include ./blocks/grid.pug
-        include ./blocks/topic.pug
+        include ./blocks/section-banner.pug
+        include ./blocks/section-grid.pug
+        .row
+          .col-xs-12.col-md-6
+            include ./blocks/widget-document.pug
+          .col-xs-12.col-md-6
+            include ./blocks/widget-news.pug
       .col-xs-12.col-md-4
+        include ./blocks/widget-checklist.pug
         include ./blocks/widget-alert.pug
         include ./blocks/widget-task.pug
-        include ./blocks/quicklink.pug
-        include ./blocks/widget-document.pug
-        include ./blocks/widget-news.pug
-        
+        include ./blocks/widget-quicklink.pug
+      .col-12
+        include ./blocks/section-topic.pug
+  .back-to-top
+    +link('Trở về đầu trang','#header','Trở về đầu trang')(back-top).btn.btn-primary
 
